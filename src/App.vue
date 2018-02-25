@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/cart">Cart</router-link> |
     </div>
     <router-view/>
   </div>
@@ -16,5 +17,6 @@
   color: #2c3e50;
 }
 
-@import '~bootstrap/dist/css/bootstrap.css'
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
 </style>

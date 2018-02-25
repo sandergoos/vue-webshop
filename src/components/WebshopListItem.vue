@@ -1,6 +1,6 @@
 <template>
     <div class="product col-4">
-        <h3 v-text="product"></h3>
+        <h3 v-text="product.name"></h3>
 
         <img class="rounded img-fluid" src="/img/jas.jpg" />
 
@@ -8,35 +8,39 @@
 
         <p>Dit product is echt geweldig wauw..</p>
 
-        <button class="btn btn-primary">Add to cart</button>
+        <button class="btn btn-primary" @click="addToCart()">Add to cart</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: "",
-    data: function () {
-        return { 
+  name: "",
+  data: function() {
+    return {};
+  },
 
-        }
-    },
-
-    props: {
-        product: {
-            required: true
-        }
+  props: {
+    product: {
+      required: true
     }
-}
+  },
+
+  methods: {
+    addToCart: function() {
+      this.$store.commit("addToCart", {
+        id: this.product.id
+      });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 .product {
-    padding: 10px;
+  padding: 10px;
 }
 
 .price {
-    font-weight: bold;
+  font-weight: bold;
 }
-
 </style>

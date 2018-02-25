@@ -10,14 +10,14 @@
 
 <script>
 // @ is an alias to /src
-import WebshopListItem from '@/components/WebshopListItem';
+import WebshopListItem from "@/components/WebshopListItem";
 
 export default {
   name: "home",
 
-  data: function () {
-    return {
-      products: ['p1', 'p2', 'p3']
+  computed: {
+    products: function() {
+      return this.$store.state.products;
     }
   },
 
