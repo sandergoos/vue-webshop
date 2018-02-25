@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <div class="row">
+      <webshop-list-item :product="item"
+      v-for="(item, index) in products" 
+      :key="index" />
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import WebshopListItem from '@/components/WebshopListItem';
 
 export default {
   name: "home",
+
+  data: function () {
+    return {
+      products: ['p1', 'p2', 'p3']
+    }
+  },
+
   components: {
-    HelloWorld
+    WebshopListItem
   }
 };
 </script>
